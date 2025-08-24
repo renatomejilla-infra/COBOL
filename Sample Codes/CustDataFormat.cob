@@ -6,6 +6,8 @@
       *    2. Validate the date (basic check).
       *    3. Calculate Age.
       *    4. Display in format: LASTNAME, FIRSTNAME (Age: XX)
+
+      *    Compiler: Micro Focus Visual Cobol
       *================================================================
        IDENTIFICATION DIVISION.
        PROGRAM-ID.     CustDataFormat.
@@ -97,4 +99,25 @@
            DISPLAY " ".
            
            STOP RUN.
+
+============================================================
+Output
+============================================================
+<<< CUSTOMER DATA FORMATTING >>>
+--------------------------------
+Enter First Name           : Renato
+Enter Last Name            : Mejilla
+Enter Birth Date (YYYYMMDD): 19691226
+
+OUTPUT FOR CUSTOMER DATA FORMATTING.
+------------------------------------
+Last Name                First Name                Age
+======================== ========================  ===
+Mejilla                  Renato                    55
+
+
+Transaction completed!
+Press any key to continue . . .
+
+      
            
