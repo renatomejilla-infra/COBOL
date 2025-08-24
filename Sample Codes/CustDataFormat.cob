@@ -63,7 +63,7 @@
            END-IF
 
            IF WS-DATE-STATUS = "E"
-              DISPLAY "Invalid Date Entered."
+              DISPLAY "Invalid Date Entered. Please follow the correct format (YYYYMMDD)."
               STOP RUN
            END-IF
 
