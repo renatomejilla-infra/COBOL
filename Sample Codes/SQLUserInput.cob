@@ -2,6 +2,7 @@
       *    Date        : August 24, 2025
       *    Description : A demo of User input that will save it to the 
       *                  table USERS and database ACMITS.
+      *    Compiler    : Micro Focus Visual COBOL
       *    ============================================================ 
       
        $set sql(dbman=odbc)
