@@ -1,0 +1,112 @@
+Start Date: August 24, 2025
+***************************
+
+Stage 1: Core COBOL Programming (Business Logic)
+These mimic batch jobs or small programs.
+
+
+Customer Data Formatting
+------------------------
+
+Accept a customer’s First Name, Last Name, and Birth Date.
+Output in the format: LASTNAME, FIRSTNAME (Age: XX).
+Add input validation (e.g., date must be valid).
+
+
+Payroll Calculation
+-------------------
+
+Input: Employee Name, Hours Worked, Hourly Rate.
+Calculate Gross Pay, Tax (12%), and Net Pay.
+Display in a formatted report-like output.
+
+
+Bank Transaction Batch
+----------------------
+
+Read an input file (fixed-length records) containing deposits and withdrawals.
+Update an account balance per record.
+Generate an end-of-day report showing all transactions and the final balance.
+
+======================================================================================
+
+Stage 2: File Handling & Data Processing
+COBOL jobs often work with flat files or indexed files.
+
+Student Grade Report (Sequential File)
+--------------------------------------
+
+Create an input file with student records (ID, Name, 3 Grades).
+Calculate average and assign Pass/Fail.
+Write results into an output report file.
+
+
+Employee Master File (Indexed File)
+-----------------------------------
+
+Create an indexed file with key = Employee ID.
+Write a program to:
+Add new employees
+Update salary
+Delete employees
+Retrieve employee by ID
+
+======================================================================================
+
+Stage 3: Database Interaction (Like Real COBOL Jobs)
+Many modern COBOL jobs involve DB2, Oracle, or SQL Server.
+Since you’re using Visual COBOL, you can connect to SQL Server or PostgreSQL.
+
+Accounts Database
+-----------------
+
+Create a table: ACCOUNTS (ACC_ID, NAME, BALANCE).
+Write a COBOL program to:
+Insert a new account.
+Update balance after deposit/withdrawal.
+Retrieve and display account details.
+
+Order Processing
+----------------
+
+Tables: CUSTOMERS, ORDERS.
+Program should:
+Accept customer ID.
+Insert a new order.
+Display all orders for that customer with total amount.
+
+======================================================================================
+
+Stage 4: Job Control & Modularization
+Program Calling
+
+Write a main driver program that calls multiple COBOL subprograms:
+------------------------------------------------------------------
+
+SUB-INPUT → Reads customer info.
+SUB-CALC → Calculates totals.
+SUB-REPORT → Generates formatted output.
+
+Batch Simulation
+----------------
+
+Program reads daily transactions (file), updates the master account database, and produces reports.
+Mimic a nightly job run.
+
+======================================================================================
+
+Stage 5: Real-World Simulation (End-to-End Mini-Project)
+Mini Banking System (Capstone)
+
+Create an Account Master File or SQL Table.
+-------------------------------------------
+
+Support operations:
+Open Account
+Deposit
+Withdraw
+Balance Inquiry
+Close Account
+Store all transactions in a Transaction Log File.
+Generate a Daily Statement Report.
+
