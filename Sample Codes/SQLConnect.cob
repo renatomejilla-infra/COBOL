@@ -3,6 +3,7 @@
       *    Description : A demo of a COBOL program connecting to a
       *                  PostgreSQL Database and displaying all the 
       *                  records in the table.
+      *    Compiler    : Micro Focus Visual COBOL
       *    ============================================================
 
        $set sql(dbman=odbc)
