@@ -1,9 +1,11 @@
       *    Author      : Renato D. Mejilla
       *    Date        : August 27, 2025
       *    Desciption  : A demo of COBOL connecting to a POSTGRESQL DB
+      *    Compiler    : Micro Focus Visual Cobol
       *    *************************************************************
        
-       $set sql(dbman=odbc)
+       $set sql(dbman=odbc)          *> parameters connecting to SQL
+      
        IDENTIFICATION DIVISION.
        PROGRAM-ID. TESTPG.
        ENVIRONMENT DIVISION.
