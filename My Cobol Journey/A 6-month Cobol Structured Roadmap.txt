@@ -1,0 +1,158 @@
+6-Month COBOL Roadmap (IBM i + z/OS Focus)
+
+Month 1 – Foundations with GnuCOBOL (Free, Local Practice)
+==========================================================
+🎯 Goal: Learn COBOL basics, data structures, and procedural programming.
+
+Install GnuCOBOL on Windows/Linux.
+
+Learn COBOL divisions: IDENTIFICATION, ENVIRONMENT, DATA, PROCEDURE.
+
+Practice:
+
+Arithmetic operations (ADD, SUBTRACT, MULTIPLY, DIVIDE, COMPUTE).
+
+Data types (PIC X, 9, COMP-3, OCCURS).
+
+String handling (MOVE, STRING, UNSTRING, INSPECT).
+
+File handling (OPEN, READ, WRITE, REWRITE, CLOSE).
+
+📌 Project: Build a Student Record System using sequential files.
+
+
+Month 2 – Advanced GnuCOBOL + SQL Basics
+========================================
+🎯 Goal: Work with structured data & prepare for DB2.
+
+Learn tables/arrays (OCCURS DEPENDING ON).
+
+Learn subprograms (CALL, USING, LINKAGE SECTION).
+
+Install SQLite/PostgreSQL and practice embedded SQL in COBOL (GnuCOBOL + OCESQL).
+
+Learn transaction control (COMMIT, ROLLBACK).
+
+📌 Project: Build an Expense Tracker with an SQLite/PostgreSQL database.
+
+
+Month 3 – Micro Focus Visual COBOL (Enterprise Features)
+========================================================
+🎯 Goal: Transition to enterprise-level COBOL with IDE support.
+
+Install Micro Focus Visual COBOL (trial/student edition) with Visual Studio/Eclipse.
+
+Practice:
+
+Debugging in IDE.
+
+DB2 precompilers (simulate DB2 with local database).
+
+COPYBOOKS and modular programming.
+
+File handling with indexed/relative files.
+
+📌 Project: Build a Payroll System with indexed files & SQL database support.
+
+
+Month 4 – IBM i (AS/400) with PUB400
+====================================
+🎯 Goal: Start real IBM i COBOL programming.
+
+Create an account on PUB400.com (Free IBM i).
+
+Learn green screen navigation (5250 emulator like Mocha TN5250 or ACS).
+
+Practice:
+
+Writing COBOL/400 programs.
+
+Running CL commands.
+
+Creating physical/logical files (PF/LF).
+
+Using DB2/400 tables with COBOL.
+
+📌 Project: Build a Customer Master System using DB2/400 tables.
+
+
+Month 5 – IBM z/OS with Hercules / IBM z Trial
+==============================================
+🎯 Goal: Understand mainframe z/OS COBOL & JCL.
+
+Install Hercules emulator (MVS Turnkey 5).
+
+Learn basics of JCL (Job Control Language).
+
+Learn VSAM files (KSDS, ESDS, RRDS).
+
+Learn COBOL on z/OS (Enterprise COBOL syntax differences).
+
+Explore CICS basics (if time permits).
+
+📌 Project: Build a Banking Transaction System using VSAM files with COBOL + JCL.
+
+
+Month 6 – Integration & Job-Ready Skills
+========================================
+🎯 Goal: Be job-ready for IBM i & z/OS COBOL roles.
+
+Practice end-to-end workflows:
+
+COBOL + DB2/400 on IBM i.
+
+COBOL + JCL + VSAM on z/OS.
+
+Work on realistic interview problems:
+
+File handling, SORT/MERGE programs.
+
+Batch vs Online COBOL.
+
+Debugging and performance.
+
+
+📌 Final Capstone Project:
+==========================
+👉 Inventory Management System
+
+IBM i version: COBOL + DB2/400 + CL.
+
+z/OS version: COBOL + JCL + VSAM.
+
+
+📚 Suggested Resources
+=======================
+Books
+
+Murach’s Mainframe COBOL
+
+Programming in COBOL/400 by Thane Hubbell
+
+Free Practice Systems
+
+PUB400.com
+ – Free IBM i system
+
+MVS Turnkey 5
+ – Hercules emulator with COBOL
+
+
+Communities
+===========
+Reddit r/cobol
+
+IBM i & Mainframe LinkedIn groups
+
+✅ Outcome After 6 Months
+
+Confident in COBOL syntax (GnuCOBOL).
+
+Comfortable with enterprise IDEs (Visual COBOL).
+
+Hands-on with IBM i (COBOL/400, CL, DB2/400).
+
+Hands-on with IBM z/OS (COBOL, JCL, VSAM, DB2 basics).
+
+Ready for COBOL programmer roles in banks, insurance, and modernization projects.
+

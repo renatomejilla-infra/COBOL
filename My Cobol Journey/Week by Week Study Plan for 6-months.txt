@@ -1,0 +1,216 @@
+📅 Weekly Study Plan – COBOL for IBM i (AS/400) & z/OS (Mainframe)
+
+Month 1 – COBOL Foundations with GnuCOBOL
+=========================================
+🎯 Goal: Master COBOL basics, structure, and file handling.
+
+Week 1 – Setup & Basics
+
+Install GnuCOBOL (Windows or Linux).
+
+Write your first COBOL program (Hello World).
+
+Learn COBOL Divisions & Sections.
+
+Exercise: Display your name, age, and today’s date.
+
+Week 2 – Data & Arithmetic
+
+Learn PIC clauses (X, 9, COMP, COMP-3).
+
+Perform calculations with ADD, SUBTRACT, MULTIPLY, DIVIDE, COMPUTE.
+
+Exercise: Create a Salary Calculator (basic arithmetic).
+
+Week 3 – Decision & Loops
+
+Learn IF, EVALUATE (switch), PERFORM (loops).
+
+Exercise: Grade Calculator (input scores, output grade).
+
+Week 4 – File Handling (Sequential Files)
+
+Learn OPEN, READ, WRITE, REWRITE, CLOSE.
+
+Exercise: Create a Student Record System using a sequential file.
+
+
+Month 2 – Advanced COBOL + SQL (GnuCOBOL with SQLite/PostgreSQL)
+================================================================
+🎯 Goal: Work with tables, subprograms, and databases.
+
+Week 5 – Arrays & Tables
+
+Learn OCCURS & OCCURS DEPENDING ON.
+
+Exercise: Store 12 months of sales and calculate totals.
+
+Week 6 – Subprograms & Modular COBOL
+
+Learn CALL, USING, LINKAGE SECTION.
+
+Exercise: Create a program that calls a subprogram to calculate tax.
+
+Week 7 – SQL Basics with COBOL
+
+Install SQLite/PostgreSQL.
+
+Learn basic SQL (CREATE, SELECT, INSERT, UPDATE, DELETE).
+
+Write COBOL programs with embedded SQL.
+
+Exercise: Insert and retrieve employee records.
+
+Week 8 – Transactions & DB Projects
+
+Learn COMMIT & ROLLBACK.
+
+Project: Expense Tracker (store expenses in SQLite/PostgreSQL via COBOL).
+
+
+Month 3 – Micro Focus Visual COBOL
+==================================
+🎯 Goal: Move to enterprise COBOL with IDE support.
+
+Week 9 – Setup & IDE
+
+Install Micro Focus Visual COBOL (trial/student edition).
+
+Create your first project in Visual Studio/Eclipse.
+
+Exercise: Run a Hello World in Visual COBOL.
+
+Week 10 – Debugging & COPYBOOKS
+
+Learn to set breakpoints, step through code, inspect variables.
+
+Use COPYBOOKS for modularity.
+
+Exercise: Create a payroll COPYBOOK for employee records.
+
+Week 11 – Indexed & Relative Files
+
+Learn about indexed files.
+
+Exercise: Create an Employee Master File with indexed access.
+
+Week 12 – Enterprise DB Integration
+
+Practice DB2 precompiler simulation (or SQL Server/Oracle if available).
+
+Project: Payroll System with indexed file + SQL database.
+
+
+Month 4 – IBM i (AS/400) on PUB400
+==================================
+🎯 Goal: Hands-on with COBOL/400 & DB2/400.
+
+Week 13 – IBM i Basics
+
+Create PUB400 account.
+
+Learn green screen navigation (5250 emulator).
+
+Run your first COBOL/400 program.
+
+Week 14 – DB2/400 with COBOL
+
+Learn CREATE TABLE in DB2/400.
+
+Write COBOL to read/write DB2/400 tables.
+
+Exercise: Create a Customer Master Table.
+
+Week 15 – CL (Control Language)
+
+Learn basic CL commands.
+
+Submit COBOL jobs from CL programs.
+
+Exercise: Automate compilation of COBOL source with CL.
+
+Week 16 – Mini-Project
+
+Project: Customer Master System with COBOL + DB2/400 + CL commands.
+
+
+Month 5 – IBM z/OS with Hercules / IBM z Trial
+==============================================
+🎯 Goal: JCL, VSAM, and batch COBOL on z/OS.
+
+Week 17 – JCL Basics
+
+Install Hercules MVS Turnkey 5.
+
+Learn DD statements, JOB cards, EXEC PGM.
+
+Exercise: Run a simple Hello World batch job.
+
+Week 18 – VSAM Files
+
+Learn KSDS, ESDS, RRDS.
+
+Define VSAM files with IDCAMS.
+
+Exercise: Write COBOL program using KSDS.
+
+Week 19 – COBOL + JCL
+
+Learn how COBOL integrates with JCL.
+
+Exercise: Run COBOL batch job that reads/writes files.
+
+Week 20 – Mini-Project
+
+Project: Banking Transaction System using COBOL + JCL + VSAM.
+
+
+Month 6 – Capstone & Job-Ready Practice
+=======================================
+🎯 Goal: Combine IBM i and z/OS skills for real-world readiness.
+
+Week 21 – Sorting & Reports
+
+Learn SORT, MERGE, REPORT WRITER.
+
+Exercise: Create a sorted employee report.
+
+Week 22 – Debugging & Optimization
+
+Practice finding and fixing logic errors.
+
+Learn performance considerations (table search, file access).
+
+Week 23 – Mock Interview Prep
+
+Review COBOL, JCL, CL, DB2, VSAM interview questions.
+
+Practice common coding tests (file handling, date handling).
+
+Week 24 – Final Capstone Project
+👉 Inventory Management System
+
+IBM i version: COBOL + DB2/400 + CL.
+
+z/OS version: COBOL + JCL + VSAM.
+
+Deliverables:
+
+COBOL source code.
+
+Database/VSAM definitions.
+
+JCL/CL scripts.
+
+Documentation (system flow, test cases).
+
+
+✅ After 6 Months, You’ll Be:
+==============================
+Strong in COBOL syntax & enterprise coding.
+
+Hands-on with Micro Focus, IBM i (COBOL/400), and IBM z/OS (JCL, VSAM).
+
+Ready for banking, insurance, and modernization COBOL jobs.
+
+
