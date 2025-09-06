@@ -1,0 +1,82 @@
+Follow this step:
+
+> WRKLIB MEJILLARDB
+If that exists, use it:
+
+> ADDLIBLE MEJILLARDB
+
+> STRSQL
+
+Then:
+
+CREATE TABLE RENATO.CUSTOMERS (
+  ID INTEGER NOT NULL,
+  NAME CHAR(50),
+  EMAIL CHAR(100),
+  PRIMARY KEY (ID)
+)
+
+1. Check if MEJILLARDB exists	> WRKLIB MEJILLARDB
+2. Use a library		> ADDLIBLE MEJILLARDB
+3. Start SQL			> STRSQL
+4. Create table			> CREATE TABLE MEJILLARDB.TABLENAME (...)
+5. View contents		> SELECT * FROM MEJILLARDB.TABLENAME or DSPPFM
+
+==============================================================================
+
+You said:
+Token ; w
+
+
+1. Library is QSYS/MEJILLARDB
+
+	a. How to confirm the library.
+           > DSPLIBL   (This command will list all available libraries)
+           Go to QSYS and type 5 
+           Check if MEJILLARDB is available
+
+	b. How to create the table CUSTOMERS under MEJILLARDB? 
+	   - Use your library	
+   	     > ADDLIBLE MEJILLARDB
+
+	   - Create table	
+             Use STRSQL inside your library
+	   
+	   - View table	
+ 	     > DSPPFM MEJILLARDB/CUSTOMERS or STRSQL
+           
+           
+	   In the interactive SQL command line (STRSQL) - type the below SQL script
+
+	   > CREATE TABLE MEJILLARDB.CUSTOMERS (
+  	   > ID INTEGER NOT NULL,
+  	   > NAME CHAR(50),
+  	   > EMAIL CHAR(100),
+  	   > PRIMARY KEY (ID)
+	   > )
+	   
+	   Then press ENTER. The table is then created.
+
+	c. How to insert a record.
+	   Type the following script in the interactive SQL command line.
+
+	   > INSERT INTO RENATO.CUSTOMERS VALUES (1, 'Renato Mejilla', 'renato@email.com')
+
+	d. How to view the TABLE contents.
+	   
+	   > SELECT * FROM MEJILLARDB.CUSTOMERS
+		or 
+	   > DSPPFM FILE(MEJILLARDB/CUSTOMERS)
+
+	e. How to check if MEJILLARDB is a valid user library?
+	   > WRKLIB MEJILLARDB
+	   > ADDLIBLE MEJILLARDB
+	   > STRSQL
+
+	
+
+
+
+	
+
+   

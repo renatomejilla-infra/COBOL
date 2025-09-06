@@ -1,0 +1,49 @@
+Continue this..
+
+> CHGCURLIB MEJILLARDB
+
+> STRSEU SRCFILE(MEJILLARDB/QCBLSRC) SRCMBR(EXCUST) TYPE(CBLLE)
+
+=======================================================================
+
+Great — once you've used this command:
+
+STRSEU SRCFILE(MEJILLARDB/QCBLSRC) SRCMBR(EXCUST) TYPE(CBLLE)
+
+✅ That opens the COBOL source member EXCUST in the QCBLSRC source file in your MEJILLARDB library for editing.
+
+✅ Now, Here's How to Compile the COBOL Source (with embedded SQL)
+You must use CRTSQLCBLI, the ILE COBOL SQL compiler:
+
+CRTSQLCBLI OBJ(MEJILLARDB/EXCUST) +
+           SRCFILE(MEJILLARDB/QCBLSRC) +
+           SRCMBR(EXCUST) +
+           COMMIT(*NONE) +
+           OBJTYPE(*MODULE)
+
+✅ This will create an ILE module for your COBOL+SQL source.
+
+🧱 Next, Create the Executable Program:
+
+CRTPGM PGM(MEJILLARDB/EXCUST) +
+       MODULE(MEJILLARDB/EXCUST)
+
+▶️ Then, Run the Program:
+
+CALL MEJILLARDB/EXCUST
+
+=======================================================
+📌 Summary
+Step			Command
+1. Edit COBOL source	STRSEU SRCFILE(MEJILLARDB/QCBLSRC) SRCMBR(EXCUST) TYPE(CBLLE)
+2. Compile COBOL+SQL	CRTSQLCBLI ...
+3. Create program	CRTPGM ...
+4. Run program		CALL MEJILLARDB/EXCUST
+
+If compilation fails, check errors with:
+
+DSPJOBLOG
+
+Or:
+
+WRKSPLF

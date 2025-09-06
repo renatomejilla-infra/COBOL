@@ -1,0 +1,88 @@
+Step-by-Step COBOL Roadmap (GnuCOBOL → IBM i / PUB400)
+
+***********************************************************************
+*Phase 1: Master COBOL Fundamentals with GnuCOBOL (Offline Practice)  *
+*Goal: Build strong COBOL syntax, logic, and file handling foundation *
+***********************************************************************
+
+Topics to Learn & Practice
+✅ Basic COBOL Program Structure
+✅ Data Types (PIC, Numeric, Alphanumeric, Group Items)
+✅ Arithmetic Operations (ADD, SUBTRACT, COMPUTE)
+✅ Conditional Logic (IF, EVALUATE)
+✅ Loops (PERFORM, PERFORM UNTIL)
+✅ String Operations (MOVE, STRING, UNSTRING)
+✅ File Handling (Sequential & Indexed files)
+✅ Modularization (CALL subprograms, PERFORM paragraphs)
+✅ Simple Terminal DISPLAY & ACCEPT
+
+Suggested Timeline: 2 to 3 Weeks (Daily Short Practice)
+Day/Week	Topics	Practice Ideas
+Day 1-3	COBOL Structure, DISPLAY, ACCEPT	Print Hello World, accept name, display
+Day 4-7	Variables, MOVE, Arithmetic, IF, EVALUATE	Calculator, Pass/Fail grading program
+Week 2	PERFORM loops, arrays, modular code	Payroll Calculation, Table search program
+Week 3	File Handling (Sequential, Indexed files)	Create & read customer records from file
+
+
+************************************************************************
+*Phase 2: Transition Mindset to IBM i (AS/400) Specifics               *
+*Understand the differences and system concepts before touching PUB400 *
+************************************************************************
+
+Topics to Read and Understand
+✅ What is IBM i (AS/400)?
+✅ Library, File, and Member concepts
+✅ DB2/400 Database basics
+✅ Display Files (DSPF) overview
+✅ Compilation commands: CRTBNDCBL, CRTCBLPGM
+✅ Interactive Jobs vs Batch Jobs
+✅ Overview of Embedded SQL
+
+This phase is mostly reading, watching tutorials, or light documentation review.
+
+
+***********************************************************************
+*Phase 3: Start Practicing on PUB400 (IBM i)                          *
+*Apply real COBOL development with DB2/400 and Display Files          *
+***********************************************************************
+
+PUB400 Beginner Practice Plan
+✅ Connect to PUB400 using terminal (ACS 5250 or Mocha TN3270)
+✅ Explore Libraries: WRKLIB, WRKMBRPDM
+✅ Create COBOL source members (QCBLLESRC or QCLLESRC)
+✅ Write and compile basic COBOL programs using CRTBNDCBL
+✅ Use DSPPFM to view flat files
+✅ Learn to create simple DB2/400 tables with SQL or DDS
+✅ Practice:
+
+Read/Write DB2/400 tables in COBOL with Embedded SQL
+
+Display customer records using COBOL and Display Files
+
+Use WRKJOB, DSPMSG to manage jobs and system messages
+
+Suggested Timeline: 3 to 4 Weeks (Consistent Practice)
+Week	Focus Area	Activities
+1	System Familiarization, Simple COBOL programs	Hello World, Accept & Display name
+2	DB2 Table creation, Embedded SQL basics	Insert/Select records from DB2 tables
+3	Display Files handling (DSPF)	Interactive screen for record maintenance
+4	Combine everything	Full mini-application with screens + DB2
+
+
+***********************************************************************
+*Phase 4: Ready for AS/400 COBOL Job Interviews                       *
+***********************************************************************
+
+✅ You can explain:
+
+✔ COBOL structure & syntax
+✔ DB2/400 integration
+✔ Display Files operation
+✔ Basic IBM i commands and development flow
+✔ System navigation in green screen
+
+Quick Tools Checklist
+✅ GnuCOBOL installed for offline practice
+✅ PUB400 account ready (https://pub400.com)
+✅ TN3270 Terminal like Mocha TN3270 or IBM ACS
+✅ PDFs/Notes of COBOL syntax differences (I can help generate those)

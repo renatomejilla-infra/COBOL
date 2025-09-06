@@ -1,0 +1,141 @@
+==========================================================================================
+
+Set Your Library as the Current Library (This command will set your current library to MEJILLARDB)
+--> CHGCURLIB CURLIB(MEJILLARDB)
+--> CHGCURLIB MEJILLARDB
+==========================================================================================
+
+This command creates a source physical file with 92-character records, standard for COBOL source code.
+--> CRTPF FILE(MEJILLARDB/SOURCE1) RCDLEN(92)
+--> CRTPF FILE(MEJILLARDB/INSERTCUST) RCDLEN(92)
+
+MEJILLARDB - is the current library
+SOURCE1 - is the new COBOL file
+
+==========================================================================================
+
+After creating SOURCE1, you add COBOL programs as members.
+--> WRKMBRPDM FILE(MEJILLARDB/SOURCE1)
+--> WRKMBRPDM FILE(MEJILLARDB/INSERTCUST)
+--> WRKMBRPDM
+
+==========================================================================================
+
+Check That Your Library Was Created (This command will display your library contents)
+--> DSPLIB LIB(MEJILLARDB)
+
+==========================================================================================
+
+Create a source file for COBOL (This command will create a new COBOL file in your current directory)
+--> CRTSRCPF FILE(MEJILLARDB/QCBLSRC) RCDLEN(112)
+
+==========================================================================================
+How to Edit COBOL Code in SEU (This command will edit the current COBOL program QCBLSRC)
+--> STRSEU SRCFILE(MEJILLARDB/QCBLSRC) SRCMBR(HELLOCBL) TYPE(CBL)
+--> STRSEU SRCFILE(MEJILLARDB/SOURCE1) SRCMBR(TESTCBL) TYPE(CBL)
+--> STRSEU SRCFILE(MEJILLARDB/QCBLSRC) SRCMBR(EXCUST) TYPE(CBLLE)
+
+MEJILLARDB is your library name (usually same as your PUB400 username).
+
+QCBLSRC is your source physical file.
+
+HELLOCBL is your COBOL program name.
+
+CBL tells SEU you're editing a COBOL source.
+==========================================================================================
+
+Start coding
+--> STRSEU SRCFILE(MEJILLARDB/QCBLSRC) SRCMBR(EX01CBL) TYPE(CBL)
+
+==========================================================================================
+
+Compile the COBOL Program (This command will compile your COBOL program)
+--> CRTBNDCBL PGM(MEJILLARDB/EX01CBL) SRCFILE(MEJILLARDB/QCBLSRC)
+--> CRTBNDCBL PGM(MEJILLARDB/INSERTCUST) SRCFILE(MEJILLARDB/QCBLSRC)
+    
+==========================================================================================
+
+Run the COBOL Program
+--> CALL MEJILLARDB/EX01CBL
+    CALL MEJILLARDB/HELLOCBL
+
+==========================================================================================
+
+You can always view the compiler's output from the spool file:
+--> WRKSPLF
+
+==========================================================================================
+
+How to Check Your Default Library
+--> DSPLIBL
+
+==========================================================================================
+
+Display All Libraries on the System
+--> DSPLIB LIB(*ALL)
+--> Press PAGEDOWN or PAGEUP to move up and down
+
+==========================================================================================
+
+Display Libraries Owned by You
+--> WRKOBJ OBJ(*ALL/*ALL) OBJTYPE(*LIB) 
+
+==========================================================================================
+
+Basic Navigation in SEU
+
+-Action-		-How to Do It-
+-------------------------------------------
+Move to next line	Press Enter
+Scroll down		Press F8
+Scroll up		Press F7
+Page down		Press F8 repeatedly
+Page up			Press F7 repeatedly
+Go to a specific line	Type F (for find) in the command line or use F19
+Insert new line		Type I in the sequence number column (left side)
+Insert multiple lines	Type In (e.g. I5 to insert 5 lines)
+Delete a line		Type D in the sequence number column
+Copy a line		Type C and then A where you want it pasted
+Move a line		Type M and then A where you want it moved
+Repeat line		Type R in the sequence number column
+Save a file             Type SAVE in the command line
+
+--> Use the arrow keys to move the cursor line by line or character by character.
+--> Use Tab to jump between input areas.
+
+Exit and Save
+Press F3 to exit.
+Press Enter when prompted to save changes.
+==========================================================================================
+
+Navigate and Edit Code inside SEU, your screen shows numbered lines like:
+
+0001.00        IDENTIFICATION DIVISION.
+0002.00        PROGRAM-ID. HELLOCBL.
+0003.00        PROCEDURE DIVISION.
+
+To do this...		Do this:
+----------------------------------------------------------------
+Move cursor		Use arrow keys
+Scroll up/down		F7 (up), F8 (down)
+Go to top or bottom	Use F18 (top), F19 (bottom)
+Add a line		Type I (Insert) in the far-left column
+Delete a line		Type D (Delete) in the far-left column
+Change a line		Move cursor to the line and overwrite it
+Repeat a line		Use R to repeat a line
+Copy and paste line	Use C on source line, A on target
+Move a line		Use M on source line, A on target
+
+I      => inserts a line below
+I3     => inserts 3 lines below
+C      => copies a line
+A      => pastes the copied line
+==========================================================================================
+
+Display the Job Log
+--> DSPJOBLOG
+Press F10 to show full messages (if needed), and look for your DISPLAY output.
+
+==========================================================================================
+
+

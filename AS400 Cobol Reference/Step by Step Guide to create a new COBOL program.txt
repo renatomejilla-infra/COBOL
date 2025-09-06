@@ -1,0 +1,82 @@
+Step by Step procedure to create a new COBOl program using IBM Developer i
+
+--> CRTLIB LIB(MEJILLARDB)						#This will create a new library name MEJILLARDB
+
+--> CHGCURLIB MEJILLARDB						#This command will change current library to MEJILLARDB
+
+--> CRTSRCPF FILE(MEJILLARLIB/RENESRCPF) RCDLEN(112)			#This will create a source physical file (to store COBOL source code)
+
+--> CRTPF FILE(MEJILLARDB/COBOL002) RCDLEN(92)				#This will create a new OBJECT called COBOL002
+
+--> STRSEU SRCFILE(MEJILLARDB/RENESRCPF) SRCMBR(CBLEX001) TYPE(CBLLE)	#Add a COBOL Program Source Member name "CBLEX001"
+									#Start SEU to edit a new source member name "CBLEX001"
+
+--> CRTBNDCBL PGM(MEJILLARDB/CBLEX001) SRCFILE(MEJILLARDB/RENESRCPF)	#Compile the COBOL Program
+
+--> CALL PGM(MEJILLARDB/CBLEX001)					#Run the COBOL Program
+
+====================================================================================================================================================
+
+Use a Display File (DSPF) with COBOL for 80x24. This is the proper way to handle full-screen I/O in COBOL on IBM i.
+
+Steps:
+Create a DSPF (Display File) using DDS
+
+Write COBOL code to OPEN, WRITE, READ the DSPF
+
+Compile the DSPF and COBOL program
+
+CALL the program – it will take control of the 80x24 screen.
+
+--> CRTSRCPF FILE(MEJILLARDB/RENEDSPF)					#This will create a new DSPF source file.
+
+--> STRSEU SRCFILE(MEJILLARLIB/RENEDSPF) SRCMBR(CBLEX001) TYPE(DSPF)	#Edit a display
+
+--> CRTDSPF FILE(MEJILLARDB/CBLEX001) SRCFILE(MEJILLARDB/RENEDSPF)	#Compile the display file
+
+--> STRSEU SRCFILE(MEJILLARDB/RENEDSPF) SRCMBR(CBLEX001) TYPE(CBLLE)	#Create the COBOL source code
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. HELLODSP.
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT SCREEN-FILE ASSIGN TO DISPLAY HELLODSPF.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD SCREEN-FILE.
+       01 SCREEN-RECORD.
+           05 FILLER    PIC X(80).
+       WORKING-STORAGE SECTION.
+       01 DUMMY-VAR PIC X.
+
+       PROCEDURE DIVISION.
+           OPEN OUTPUT SCREEN-FILE
+           WRITE SCREEN-RECORD
+           ACCEPT DUMMY-VAR
+           CLOSE SCREEN-FILE
+           STOP RUN.
+
+--> CRTBNDCBL PGM(MEJILLARDB/RENEDSPF) SRCFILE(MEJILLARDB/CBLEX001)	#Compile the COBOL program
+
+--> CALL PGM(MEJILLARDB/RENEDSPF)					#Run the program
+ 
+
+Now you'll see full screen output (24x80) with "HELLO WORLD FROM SCREEN!".
+
+
+
+====================================================================================================================================================
+
+Summary of Commands
+
+Purpose				Command
+-------------------------------------------------------------------------------------------------
+Create Library			CRTLIB LIB(MEJILLARLIB)
+Create COBOL Source File	CRTSRCPF FILE(MEJILLARLIB/QCBLLESRC) RCDLEN(112)
+Edit COBOL Source Member	STRSEU SRCFILE(MEJILLARLIB/QCBLLESRC) SRCMBR(HELLOCBL) TYPE(CBLLE)
+Compile COBOL Program		CRTBNDCBL PGM(MEJILLARLIB/HELLOCBL) SRCFILE(MEJILLARLIB/QCBLLESRC)
+Run the COBOL Program		CALL PGM(MEJILLARLIB/HELLOCBL)
+
+====================================================================================================================================================

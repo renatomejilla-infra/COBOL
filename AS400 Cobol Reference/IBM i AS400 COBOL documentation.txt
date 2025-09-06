@@ -1,0 +1,130 @@
+IBM i (AS/400) COBOL Beginner Documentation & Practice Guide
+
+1. What is IBM i (AS/400)?
+==========================
+IBM i (formerly known as AS/400, iSeries, or System i) is an integrated operating system developed by IBM for midrange computing. It combines:
+
+Operating System
+
+Database (DB2/400)
+
+Development tools
+
+Security and Job Management
+
+IBM i is widely used for business applications due to its stability, integrated database, and support for COBOL, RPG, SQL, CL, and other languages.
+
+
+2. Library, File, and Member Concepts
+=====================================
+IBM i uses a unique structure to organize data:
+
+Library: A container for objects (like folders)
+Object: Can be a file, program, display file, etc.
+Source File: A type of file used to store source code
+Member: Individual source code module within a source file
+
+Example Structure:
+
+LIBRARY: MYLIB
+|
+|-- Source File: QCBLLESRC  (Holds COBOL source)
+    |
+    |-- Member: PROG1  (COBOL program code)
+
+
+3. DB2/400 Database Basics
+==========================
+DB2/400 is the integrated relational database for IBM i.
+
+Tables can be created via SQL or DDS (Data Description Specifications)
+
+Accessible directly from COBOL with Embedded SQL
+
+Data types: INT, CHAR, DECIMAL, DATE, etc.
+
+Example SQL Table Creation:
+
+CREATE TABLE MYLIB/EMPLOYEE (
+  EMPID INT,
+  NAME CHAR(20),
+  DEPT CHAR(10)
+);
+
+
+4. Display Files (DSPF) Overview
+================================
+Display Files define interactive screens for COBOL or RPG programs.
+
+Created using DDS source code
+
+Stored in source files (e.g., QDDSSRC)
+
+Compiled into display files for use in programs
+
+DDS Example:
+
+A R SCREEN1
+A  10 5'Enter Name:'
+A  10 20 NAME 20A B
+
+In COBOL:
+
+READ DISPLAY-FILE
+WRITE DISPLAY-FILE
+
+
+5. Compilation Commands
+=======================
+Two common COBOL compilation commands:
+
+CRTBNDCBL: Creates a bound COBOL program with dynamic linking.
+
+CRTBNDCBL PGM(MYLIB/PROG1) SRCFILE(MYLIB/QCBLLESRC)
+
+CRTCBLPGM: Creates a standalone COBOL program.
+
+CRTCBLPGM PGM(MYLIB/PROG2) SRCFILE(MYLIB/QCBLLESRC)
+
+Use WRKMBRPDM to navigate and edit source members.
+
+
+6. Interactive Jobs vs Batch Jobs
+=================================
+Interactive Job: Runs with user input via terminal (e.g., 5250 screen)
+Batch Job: Runs in background, no user interaction, submitted with SBMJOB
+
+Interactive jobs use Display Files and respond to real-time input.
+
+
+7. Overview of Embedded SQL in COBOL
+====================================
+Embedded SQL allows COBOL to interact with DB2/400 directly.
+
+Example:
+
+EXEC SQL
+  SELECT NAME, DEPT INTO :WS-NAME, :WS-DEPT
+  FROM EMPLOYEE
+  WHERE EMPID = :WS-EMPID
+END-EXEC.
+
+Host variables in COBOL hold data from SQL
+
+Requires pre-compilation and proper compilation steps
+
+Practice Tips
+
+Create libraries with CRTLIB
+
+Create source files with CRTSRCPF
+
+Edit source members with WRKMBRPDM
+
+Compile COBOL with CRTBNDCBL
+
+Use STRSQL for practicing SQL
+
+Create and test Display Files with DDS
+
+Combine COBOL + SQL for database programs

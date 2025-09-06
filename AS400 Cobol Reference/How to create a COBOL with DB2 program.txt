@@ -1,0 +1,103 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. INSERT-SELECT-CUST2.
+
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+       EXEC SQL INCLUDE SQLCA END-EXEC.
+
+       01  WS-ID             PIC 9(4).
+       01  WS-NAME           PIC X(50).
+       01  WS-EMAIL          PIC X(100).
+
+       01  CUST-ID           PIC 9(4).
+       01  CUST-NAME         PIC X(50).
+       01  CUST-EMAIL        PIC X(100).
+
+       01  EOF-FLAG          PIC X VALUE 'N'.
+
+       PROCEDURE DIVISION.
+
+       BEGIN.
+
+           DISPLAY "Enter Customer ID: "
+           ACCEPT WS-ID
+
+           DISPLAY "Enter Customer Name: "
+           ACCEPT WS-NAME
+
+           DISPLAY "Enter Customer Email: "
+           ACCEPT WS-EMAIL
+
+           EXEC SQL
+                INSERT INTO MEJILLARDB.CUSTOMERS (ID, NAME, EMAIL)
+                VALUES (:WS-ID, :WS-NAME, :WS-EMAIL)
+           END-EXEC
+
+           IF SQLCODE = 0
+               DISPLAY "Insert Successful"
+           ELSE
+               DISPLAY "Insert Failed. SQLCODE: " SQLCODE
+               STOP RUN
+           END-IF
+
+           DISPLAY "Reading all records from CUSTOMERS table..."
+
+           EXEC SQL
+                DECLARE C1 CURSOR FOR
+                SELECT ID, NAME, EMAIL
+                FROM MEJILLARDB.CUSTOMERS
+           END-EXEC
+
+           EXEC SQL
+                OPEN C1
+           END-EXEC
+
+           PERFORM UNTIL EOF-FLAG = 'Y'
+               EXEC SQL
+                   FETCH C1 INTO :CUST-ID, :CUST-NAME, :CUST-EMAIL
+               END-EXEC
+
+               IF SQLCODE = 0
+                   DISPLAY "ID: " CUST-ID
+                   DISPLAY "NAME: " CUST-NAME
+                   DISPLAY "EMAIL: " CUST-EMAIL
+               ELSE
+                   MOVE 'Y' TO EOF-FLAG
+               END-IF
+           END-PERFORM
+
+           EXEC SQL
+                CLOSE C1
+           END-EXEC
+
+           DISPLAY "Program Completed."
+           STOP RUN.
+
+=============================================================================================================
+
+Compilation Instructions
+Assume this is saved in INSERTCUST1 inside MEJILLARDB/QCOBOL:
+
+CRTSQLCBLI OBJ(MEJILLARDB/INSERTCUST1) +
+           SRCFILE(MEJILLARDB/QCOBOL) +
+           COMMIT(*NONE) +
+           OBJTYPE(*MODULE)
+
+Then build the program:
+
+CRTPGM PGM(MEJILLARDB/INSERTCUST1) +
+       MODULE(MEJILLARDB/INSERTCUST1)
+
+Then run it:
+
+CALL MEJILLARDB/INSERTCUST1
+
+=============================================================================================================
+
+CRTSRCPF FILE(MEJILLARDB/QCBLLESRC) RCDLEN(112)
+
+STRSEU SRCFILE(MEJILLARDB/QCBLLESRC) SRCMBR(INSERTCUST) TYPE(CBLLE)
+
+

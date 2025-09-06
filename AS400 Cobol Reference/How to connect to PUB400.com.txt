@@ -1,0 +1,10 @@
+1. Get credentials from, PUB400.com
+
+2. Open Mocha TN5250 emulator
+
+3. Enter the following credentials to TN5250.
+   Username: MEJILLARD
+   PW:       f867eddf
+
+4. Done.
+
