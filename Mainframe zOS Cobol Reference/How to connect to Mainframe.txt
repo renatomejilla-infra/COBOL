@@ -1,0 +1,15 @@
+Run Hercules
+
+--> Go to unattended --> set_console_mode
+--> run mvs.exe
+
+Open --> Mocha TN3270 
+
+Login
+Username: herc01
+Password: cul8tr
+
+
+Hercules Web Interface 
+http://127.0.0.1:8038/
+

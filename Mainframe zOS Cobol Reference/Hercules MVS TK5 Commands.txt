@@ -1,0 +1,8 @@
+Line commands
+1. i/iN - Inser line (Ex: i8 - insert 8 lines
+
+2. r/rN - Repeat line (Ex: r8 - repeat 8 lines)
+
+3. d/dN - Delete line (Ex: d8 - delete 8 lines)
+
+4. 
