@@ -1,0 +1,6 @@
+//USER21R  JOB (ACCOUNT),GIE,MSGCLASS=X,CLASS=A,NOTIFY=&SYSUID, 
+//           REGION=0M,TIME=(0,5)                               
+//*                                                             
+//STEP01 EXEC PGM=TRN002                                        
+//STEPLIB DD DSN=USER21.DEV.LOAD,DISP=SHR                       
+//SYSOUT DD SYSOUT=*                                            

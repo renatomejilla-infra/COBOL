@@ -1,0 +1,56 @@
+//USER21B JOB MSGLEVEL=(1,1),NOTIFY=&SYSUID                           
+//PLIB    JCLLIB ORDER=(USER21.DEV.PROC)                              
+//*                                                                   
+//*  COBOL + DB2 PRECOMPILE AND LINKEDIT                              
+//*                                                                   
+//DBPREC  EXEC DB2COBCL,                                              
+//             COPYLIB=USER21.DEV.COPY,        <= COPYBOOK LIBRARY    
+//             DCLGLIB=USER21.DEV.DCLGEN.COBOL, <= DCLGEN LIBRARY     
+//             DBRMLIB=USER21.DEV.DBRM,        <= DBRM LIBRARY        
+//             LOADLIB=USER21.DEV.LOAD,        <= LOAD LIBRARY        
+//             SRCLIB=USER21.DEV.COBOL,        <= SOURCE LIBRARY      
+//             MEMBER=COBVARC                  <= SOURCE MEMBER       
+//*                                                                   
+//*  DB2 BIND JCL                                                     
+//*                                                                   
+//BIND     EXEC PGM=IKJEFT01   
+//STEPLIB  DD  DISP=SHR,DSN=DSNA10.DBAG.SDSNEXIT        
+//         DD  DISP=SHR,DSN=DSNA10.SDSNLOAD             
+//DBRMLIB  DD  DSN=USER21.DEV.DBRM,DISP=SHR             
+//SYSPRINT DD  SYSOUT=*                                 
+//SYSTSPRT DD  SYSOUT=*                                 
+//SYSUDUMP DD  SYSOUT=*                                 
+//SYSTSIN  DD  *                                        
+DSN SYSTEM (DBAG   )                                    
+BIND  PACKAGE   (U21COL)    -                           
+      MEMBER    (COBVARC)   -                           
+      ACTION    (REP)       -                           
+      ISOLATION (CS)        -                           
+      VALIDATE  (BIND)      -                           
+      RELEASE   (COMMIT)    -                           
+      OWNER     (USER21) -                              
+      QUALIFIER (USER21) -                              
+      ENCODING  (1047)    
+END                                                         
+//*                                                         
+//BIND2    EXEC PGM=IKJEFT01                                
+//STEPLIB  DD  DISP=SHR,DSN=DSNA10.DBAG.SDSNEXIT            
+//         DD  DISP=SHR,DSN=DSNA10.SDSNLOAD                 
+//DBRMLIB  DD  DSN=USER21.DEV.DBRM,DISP=SHR                 
+//SYSPRINT DD  SYSOUT=*                                     
+//SYSTSPRT DD  SYSOUT=*                                     
+//SYSUDUMP DD  SYSOUT=*                                     
+//SYSTSIN  DD  *                                            
+DSN SYSTEM (DBAG   )                                        
+BIND  PLAN      (U21PLAN) -                                 
+      PKLIST    (U21COL.*)    -                             
+      ACTION    (REP)       -                               
+      ISOLATION (CS)        -                               
+      VALIDATE  (BIND)      -                               
+      RELEASE   (COMMIT)    -                               
+      OWNER     (USER21) -        
+      QUALIFIER (USER21) -        
+      ENCODING  (1047)            
+END                               
+/*                                
+                                                                     

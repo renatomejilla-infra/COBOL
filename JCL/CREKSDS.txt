@@ -1,0 +1,19 @@
+//USER21K JOB CLASS=A,MSGLEVEL=(1,1),MSGCLASS=A,NOTIFY=&SYSUID,   
+//            PRTY=15                                             
+//*                                                               
+//*       >>>> CREATE A KSDS <<<<                                 
+//*                                                               
+//STEP010 EXEC PGM=IDCAMS                                         
+//SYSPRINT DD SYSOUT=*                                            
+//SYSIN    DD *                                                   
+           DEFINE CLUSTER(             -                          
+                  NAME(USER21.FILE.KSDS) -                        
+                  INDEXED                   -                     
+                  KEYS(2 0)                 -                     
+                  RECSZ(10 10)             -                      
+                  FREESPACE(10 20)          -                     
+                  TRACKS(10 5)             -                      
+                  CISZ(8192)                -                     
+                  VOLUME(USER21))            
+/*                                           
+

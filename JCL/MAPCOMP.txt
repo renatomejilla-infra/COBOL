@@ -1,0 +1,11 @@
+//USER21M JOB (529),'ASSEMBLE MAP',CLASS=A,MSGCLASS=A,              
+//             MSGLEVEL=(1,1),NOTIFY=&SYSUID                        
+//PLIB    JCLLIB ORDER=(USER21.DEV.PROC)                            
+//*                                                                 
+//* TO ASSEMBLE CICS BMS MAP                                        
+//*                                                                 
+//CICSMAP  EXEC DFHMAPS,                                            
+//         COPYLIB=USER21.DEV.COPY, <= SYMBOLIC MAP COPY LIBRARY    
+//         SRCLIB=USER21.DEV.MAP,   <= SOURCE LIBRARY               
+//         MEMBER=MENU01M           <= MAP MEMBER NAME              
+//*                                                                 

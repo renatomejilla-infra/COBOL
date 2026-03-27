@@ -1,0 +1,9 @@
+//USER21C JOB MSGLEVEL=(1,1),NOTIFY=&SYSUID                       
+//PLIB    JCLLIB ORDER=(USER21.DEV.PROC)                          
+//*                                                               
+//*  COMPILE A COBOL + CICS PROGRAM                               
+//*                                                               
+//CICSCOB  EXEC CICSCOBC,                                         
+//             COPYLIB=USER21.DEV.COPY,      <= COPYBOOK LIBRARY  
+//             SRCLIB=USER21.DEV.COBOL,      <= SOURCE LIBRARY    
+//             MEMBER=HEL1CICS               <= SOURCE MEMBER     

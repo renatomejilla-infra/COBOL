@@ -1,0 +1,44 @@
+//USER21D JOB CLASS=A,MSGCLASS=A,MSGLEVEL=(1,1),NOTIFY=&SYSUID      
+//*                                                                 
+//*  DB2 BIND JCL                                                   
+//*                                                                 
+//BIND     EXEC PGM=IKJEFT01                                        
+//STEPLIB  DD  DISP=SHR,DSN=DSNA10.DBAG.SDSNEXIT                    
+//         DD  DISP=SHR,DSN=DSNA10.SDSNLOAD                         
+//DBRMLIB  DD  DSN=USER21.DEV.DBRM,DISP=SHR                         
+//SYSPRINT DD  SYSOUT=*                                             
+//SYSTSPRT DD  SYSOUT=*                                             
+//SYSUDUMP DD  SYSOUT=*                                             
+//SYSTSIN  DD  *                                                    
+DSN SYSTEM (DBAG   )                                                
+BIND  PACKAGE   (U21COL)    -                                       
+      MEMBER    (HOBSLCT)   -                                       
+      ACTION    (REP)       -                                       
+      ISOLATION (CS)        -                            
+      VALIDATE  (BIND)      -                            
+      RELEASE   (COMMIT)    -                            
+      OWNER     (USER21) -                               
+      QUALIFIER (USER21) -                               
+      ENCODING  (1047)                                   
+END                                                      
+//*                                                      
+//BIND2    EXEC PGM=IKJEFT01                             
+//STEPLIB  DD  DISP=SHR,DSN=DSNA10.DBAG.SDSNEXIT         
+//         DD  DISP=SHR,DSN=DSNA10.SDSNLOAD              
+//DBRMLIB  DD  DSN=USER21.DEV.DBRM,DISP=SHR              
+//SYSPRINT DD  SYSOUT=*                                  
+//SYSTSPRT DD  SYSOUT=*                                  
+//SYSUDUMP DD  SYSOUT=*                                  
+//SYSTSIN  DD  *                                         
+DSN SYSTEM (DBAG   )                                     
+BIND  PLAN      (U21PLAN) -      
+      PKLIST    (U21COL.*)    -  
+      ACTION    (REP)       -    
+      ISOLATION (CS)        -    
+      VALIDATE  (BIND)      -    
+      RELEASE   (COMMIT)    -    
+      OWNER     (USER21) -       
+      QUALIFIER (USER21) -       
+      ENCODING  (1047)           
+END                              
+/*                               

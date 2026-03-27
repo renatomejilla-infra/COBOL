@@ -1,0 +1,10 @@
+//USER21C JOB MSGLEVEL=(1,1),NOTIFY=&SYSUID                        
+//PLIB    JCLLIB ORDER=(USER21.DEV.PROC)                           
+//*                                                                
+//*  COMPILE A COBOL PROGRAM                                       
+//*                                                                
+//CL      EXEC COBOLCL,                                            
+//             COPYLIB=USER21.DEV.COPY,       <= COPYBOOK LIBRARY  
+//             LOADLIB=USER21.DEV.LOAD,       <= LOAD LIBRARY      
+//             SRCLIB=USER21.DEV.COBOL,       <= SOURCE LIBRARY    
+//             MEMBER=TRN002                  <= SOURCE MEMBER     

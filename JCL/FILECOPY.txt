@@ -1,0 +1,9 @@
+//* This script will copy a member to another PDS.
+//
+//COPYJOB  JOB (ACCT),'COPY MEMBER',CLASS=A,MSGCLASS=X    
+//STEP1    EXEC PGM=IEBGENER                              
+//SYSPRINT DD SYSOUT=*                                    
+//SYSUT1   DD DSN=USER21.DEV.JCL(COBCOMP),DISP=SHR        
+//SYSUT2   DD DSN=USER21.AAA.JCL(COBCOM),                 
+//             DISP=SHR                                   
+//SYSIN    DD DUMMY                                       

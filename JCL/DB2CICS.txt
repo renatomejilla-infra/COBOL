@@ -1,0 +1,11 @@
+//USER21C JOB MSGLEVEL=(1,1),NOTIFY=&SYSUID                            
+//PLIB    JCLLIB ORDER=(USER21.DEV.PROC)                               
+//*                                                                    
+//*  COBOL + DB2 + CICS COMPILE JCL                                    
+//*                                                                    
+//DBONL   EXEC DB2CICSC,                                               
+//             COPYLIB=USER21.DEV.COPY,          <= COPY LIBRARY       
+//             DCLGLIB=USER21.DEV.DCLGEN.COBOL,  <= DCLGEN LIBRARY     
+//             DBRMLIB=USER21.DEV.DBRM,          <= DBRM LIBRARY       
+//             SRCLIB=USER21.DEV.COBOL,          <= SOURCE LIBRARY     
+//             MEMBER=TRFU01P                    <= SOURCE MEMBER      
